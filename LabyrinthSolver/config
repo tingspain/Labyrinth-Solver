@@ -1,0 +1,32 @@
+## labyrinth solver config file
+
+# which labyrinth to load - string
+System.labyrinth = pictures/plane1.bmp
+
+# running in console mode - t or f
+System.console = f
+
+# count of runs - integer
+System.runs = 1
+
+# number of the used algorithm
+# 0: ant
+# 1: physarum
+# 2: flood
+System.algorithm = 1
+
+## ant config
+
+# trail to food and home - double
+Ant.FoodTrail = 5
+Ant.HomeTrail = 5
+
+# decrease each step for the trail - double
+Ant.FoodTrailDecrease = 0.035
+Ant.HomeTrailDecrease = 0.035
+
+# number of ants - integer
+Ant.AntCount = 50
+
+# maximum number of steps, before simulation ends - integer 
+Ant.MaxSteps = 50000
