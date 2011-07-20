@@ -15,7 +15,7 @@ public class Start {
 		
 		Config c = new Config(file);
 		
-		sims = new Wrapper[] {new AntWrapper(), new PhysarumWrapper()};
+		sims = new Wrapper[] {new AntWrapper(), new PhysarumWrapper(), new FloodWrapper()};
 		
 		if(c.getBool("System.console")) {
 			sims[c.getInt("System.algorithm")].startConsole(System.out, c);

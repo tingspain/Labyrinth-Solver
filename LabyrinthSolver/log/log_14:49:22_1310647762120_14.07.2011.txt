@@ -1,8 +1,0 @@
-algorithm: physarum
-labyrinth: pictures/plane1.bmp
-steps: 0
-entry: (13,9)
-exit: (88,68)
-walls: 8266, %: 0.8266
-paths: 11734, %: 1.1734
-found: 4134, %: 0.3523095278677348
