@@ -15,7 +15,8 @@ public class PhysarumWrapper implements Wrapper {
 		PhysarumState fs = new PhysarumState(System.currentTimeMillis(), conf);
 		
 		for(int i=0; i < conf.getInt("System.runs"); i++) {
-			ps.println("Running LabyrinthSolver in console mode...");			
+			ps.println("Running LabyrinthSolver in console mode...");
+			ps.println("Using "+toString());
 			fs.start();			
 			while(fs.schedule.step(fs)) {
 
