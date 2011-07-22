@@ -27,6 +27,8 @@ public class PhysarumState extends SimulationState {
 	public void start() {
 		super.start();
 		
+		setLogname();
+		
 		initializeGrid();				
 		
 		agent = new Physarum(entry.x, entry.y, exit.x, exit.y);

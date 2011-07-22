@@ -27,6 +27,8 @@ public class FloodState extends SimulationState {
 	public void start() {
 		super.start();
 		
+		setLogname();
+		
 		initializeGrid();				
 		
 		agent = new Flood(entry.x, entry.y, exit.x, exit.y);

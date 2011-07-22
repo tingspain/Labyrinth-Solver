@@ -23,7 +23,7 @@ public abstract class SimulationState extends SimState {
 	public SimulationState(long seed, Config c) {
 		super(seed);
 		
-		setLogname();
+		logname = "";
 		config = c;
 	}
 

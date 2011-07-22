@@ -37,6 +37,8 @@ public class AntState extends SimulationState {
 	public void start() {
 		super.start();
 		
+		setLogname();
+		
 		initializeGrid();				
 		
 		agents = new Ant[ants];
