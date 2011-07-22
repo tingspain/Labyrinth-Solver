@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="/home/fab/Downloads/solver.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/LabyrinthSolver/Solver.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=LabyrinthSolver/src&lt;de.sim{Start.java[Start" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=MASON/src&lt;ec.util"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.grid"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal.network"/>
+        <file path="/LabyrinthSolver/.classpath"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.field.continuous"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.util.media.chart"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.util.gui"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.field"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.display"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.grid.quad"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal.grid"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal.simple"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.engine"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.util"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal.continuous"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.simple"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.continuous"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.display3d"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal.inspector"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.util.media"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.network"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.field.grid"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.portrayal3d.inspector"/>
+        <file path="/LabyrinthSolver/.project"/>
+        <javaElement handleIdentifier="=LabyrinthSolver/src"/>
+        <javaElement handleIdentifier="=MASON/src&lt;sim.field.network"/>
+    </selectedElements>
+</jardesc>
