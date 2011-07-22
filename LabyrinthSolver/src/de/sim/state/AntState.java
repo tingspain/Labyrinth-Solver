@@ -39,6 +39,9 @@ public class AntState extends SimulationState {
 		
 		setLogname();
 		
+		wall = 0;
+		path = 0;
+		
 		initializeGrid();				
 		
 		agents = new Ant[ants];

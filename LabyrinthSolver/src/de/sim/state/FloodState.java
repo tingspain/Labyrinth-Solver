@@ -28,6 +28,9 @@ public class FloodState extends SimulationState {
 		super.start();
 		
 		setLogname();
+	
+		wall = 0;
+		path = 0;
 		
 		initializeGrid();				
 		
