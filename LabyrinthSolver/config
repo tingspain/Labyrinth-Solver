@@ -13,7 +13,7 @@ System.runs = 1
 # 0: ant
 # 1: physarum
 # 2: flood
-System.algorithm = 2
+System.algorithm = 0
 
 ## ant config
 
@@ -27,11 +27,16 @@ Ant.HomeTrailDecrease = 0.035
 
 # number of ants - integer
 Ant.AntCount = 50
+# number of ants with right hand rule - integer
+Ant.AntRightCount = 20
 
 # maximum number of steps, before simulation ends - integer 
 Ant.MaxSteps = 50000
 
+# percentile chance to break wall hugging of right hand rule ants - double
+Ant.BreakWall = 0.02
+
 ## flood config
 
-# use moore or von neuman neighborhood for the path calculation - t or f
+# use moore or von neumann neighborhood for the path calculation - t or f
 Flood.Moore = f

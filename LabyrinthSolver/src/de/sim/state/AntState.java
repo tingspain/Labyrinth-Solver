@@ -6,6 +6,7 @@ import java.awt.Point;
 import java.util.Arrays;
 
 import de.sim.agents.Ant;
+import de.sim.agents.AntRight;
 import de.sim.agents.AntScent;
 import de.sim.utils.Config;
 
@@ -16,7 +17,9 @@ public class AntState extends SimulationState {
 	private SparseGrid2D solver_space;
 	
 	private int ants = 50;
+	private int rants = 0;
 	private Ant[] agents;
+	private AntRight[] ragents;
 	
 	private AntScent disolver;
 	
@@ -32,6 +35,7 @@ public class AntState extends SimulationState {
 		path = 0;
 		roundtrips = 0;
 		ants = conf.getInt("Ant.AntCount");
+		rants = conf.getInt("Ant.AntRightCount");
 	}
 	
 	public void start() {
@@ -45,6 +49,7 @@ public class AntState extends SimulationState {
 		initializeGrid();				
 		
 		agents = new Ant[ants];
+		ragents = new AntRight[rants];
 		disolver = new AntScent();
 		
 		schedule.scheduleRepeating(schedule.EPOCH, disolver);
@@ -52,10 +57,14 @@ public class AntState extends SimulationState {
 		for(int i = 0; i< ants;i++) {
 			agents[i] = new Ant(entry.x, entry.y, exit.x, exit.y);
 			solver_space.setObjectLocation(agents[i], entry.x, entry.y);
+			schedule.scheduleRepeating(schedule.EPOCH, agents[i]);
 		}
-			
-		for(int i = 0; i < ants; i++) 
-			schedule.scheduleRepeating(schedule.EPOCH, agents[i]);			
+		
+		for(int i = 0; i< rants;i++) {
+			ragents[i] = new AntRight(entry.x, entry.y, exit.x, exit.y);
+			solver_space.setObjectLocation(ragents[i], entry.x, entry.y);
+			schedule.scheduleRepeating(schedule.EPOCH, ragents[i]);
+		}					 
 	}
 	
 	public void finish() {		
