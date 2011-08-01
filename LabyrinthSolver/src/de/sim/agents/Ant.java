@@ -86,6 +86,7 @@ public class Ant implements Steppable {
 
 		if(state.getGrid().get(x, y) > 0) {
 			state.getSolverSpace().setObjectLocation(this, x, y);
+			dir = newdir;
 			if(goBack)
 				state.getScentSpace().set(pos.x, pos.y, state.getScentSpace().get(pos.x, pos.y)+state.getConfig().getDouble("Ant.FoodTrail"));
 			else

@@ -43,8 +43,9 @@ public class AntRight implements Steppable {
 				Math.random() > state.getConfig().getDouble("Ant.BreakWall")) {
 				if(state.getGrid().get(pos.x+directions[r][0], pos.y+directions[r][1]) == 0) {
 					if(state.getGrid().get(pos.x+directions[dir][0], pos.y+directions[dir][1]) == 0) {
-						newdir = dir - 2;
-						if(newdir < 0) newdir += directions.length;
+						//newdir = dir - 2;
+						//if(newdir < 0) newdir += directions.length;
+						newdir = l;
 					} else
 						newdir = dir;
 				} else
@@ -52,7 +53,7 @@ public class AntRight implements Steppable {
 		} else if(state.getGrid().get(pos.x+directions[r][0], pos.y+directions[r][1]) == 0 &&
 				Math.random() > state.getConfig().getDouble("Ant.BreakWall")) {
 			newdir = dir;
-		}					
+		}				
 		
 		if(newdir == -1) {			
 			double[] scent_values = new double[3];
@@ -103,14 +104,16 @@ public class AntRight implements Steppable {
 
 		if(state.getGrid().get(x, y) > 0) {
 			state.getSolverSpace().setObjectLocation(this, x, y);
+			dir = newdir;
 			if(goBack)
 				state.getScentSpace().set(pos.x, pos.y, state.getScentSpace().get(pos.x, pos.y)+state.getConfig().getDouble("Ant.FoodTrail"));
 			else
 				state.getScentHomeSpace().set(pos.x, pos.y, state.getScentHomeSpace().get(pos.x, pos.y)+state.getConfig().getDouble("Ant.HomeTrail"));
 		} else {
-			int t = (int) (Math.random()*3)+1;
-			if(Math.random() < 0.5) t *= -1;				
-			dir = (dir + t + directions.length) % directions.length;			
+			//int t = (int) (Math.random()*3)+1;
+			//if(Math.random() < 0.5) t *= -1;				
+			//dir = (dir + t + directions.length) % directions.length;
+			dir = (dir - 1 + directions.length) % directions.length;			
 		}
 		
 		if(x == exit.x && y == exit.y && !goBack) {

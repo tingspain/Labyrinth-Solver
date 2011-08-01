@@ -34,7 +34,7 @@ Ant.AntRightCount = 20
 Ant.MaxSteps = 50000
 
 # percentile chance to break wall hugging of right hand rule ants - double
-Ant.BreakWall = 0.02
+Ant.BreakWall = 0.001
 
 ## flood config
 
