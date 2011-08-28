@@ -25,6 +25,8 @@ public class AntState extends SimulationState {
 	
 	private long roundtrips;
 	
+	private int minsteps;
+	
 	public AntState(long seed, Config conf) {
 		super(seed, conf);
 		
@@ -36,6 +38,7 @@ public class AntState extends SimulationState {
 		roundtrips = 0;
 		ants = conf.getInt("Ant.AntCount");
 		rants = conf.getInt("Ant.AntRightCount");
+		minsteps = Integer.MAX_VALUE;
 	}
 	
 	public void start() {
@@ -69,6 +72,7 @@ public class AntState extends SimulationState {
 	
 	public void finish() {		
 		writeLog(grid, "ant");
+		System.out.println("min steps: "+minsteps);
 	}
 	
 	private void initializeGrid() {
@@ -78,6 +82,11 @@ public class AntState extends SimulationState {
 		scent_home_space = new DoubleGrid2D(grid.getWidth(), grid.getHeight());
 		scent_home_space.lowerBound(1);
 		solver_space = new SparseGrid2D(grid.getWidth(), grid.getHeight());
+	}
+	
+	public void setMinSteps(int steps) {
+		if(steps < minsteps)
+			minsteps = steps;
 	}
 	
 	public IntGrid2D getGrid() { return grid; }

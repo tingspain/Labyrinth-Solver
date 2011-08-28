@@ -16,17 +16,21 @@ public class Ant implements Steppable {
 	
 	private boolean goBack;
 	
+	private int steps;
+	
 	public Ant(int entryx, int entryy, int exitx, int exity) {
 		entry = new Point(entryx, entryy);
 		exit = new Point(exitx, exity);
 		goBack = false;
 		
 		dir = (int) Math.random()*8;
+		steps = 0;
 	}
 	
 	public void step(SimState state) {
 		AntState st = (AntState) state;
 	
+		steps++;
 		move(st);
 	}
 	
@@ -73,12 +77,20 @@ public class Ant implements Steppable {
 		
 		int newdir;
 		
-		if(rand <= scent_p[0]) {
+		if(state.getGrid().get(pos.x+directions[l][0], pos.y+directions[l][1]) == 2) {
 			newdir = l;
-		} else if (rand > scent_p[0] && rand <= scent_p[0]+scent_p[1]) {
+		} else if (state.getGrid().get(pos.x+directions[dir][0], pos.y+directions[dir][1]) == 2) {
 			newdir = dir;
-		} else {
+		} else if (state.getGrid().get(pos.x+directions[r][0], pos.y+directions[r][1]) == 2) {
 			newdir = r;
+		} else {
+			if(rand <= scent_p[0]) {
+				newdir = l;
+			} else if (rand > scent_p[0] && rand <= scent_p[0]+scent_p[1]) {
+				newdir = dir;
+			} else {
+				newdir = r;
+			}
 		}
 		
 		int x = pos.x+directions[newdir][0];
@@ -100,10 +112,14 @@ public class Ant implements Steppable {
 		if(x == exit.x && y == exit.y && !goBack) {
 			goBack = true;
 			dir = (dir + directions.length/2) % directions.length;
+			state.setMinSteps(steps);
+			steps = 0;
 		} else if(x == entry.x && y == entry.y && goBack) {
 			goBack = false;
 			dir = (dir + directions.length/2) % directions.length;
-			state.incRoundTrip();			
+			state.incRoundTrip();
+			state.setMinSteps(steps);
+			steps = 0;
 		}
 	}
 }
